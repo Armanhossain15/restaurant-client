@@ -1,4 +1,5 @@
 // import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Banner from "./Banner/Banner";
 import Categorys from "./Categorys/Categorys";
 import Featured from "./Featured/Featured";
@@ -13,6 +14,9 @@ const Home = () => {
     // console.log('popularData', popularData);
     return (
         <div>
+             <Helmet>
+                <title>Restrurent Web - Home</title>
+            </Helmet>
             <Banner/>
             <Categorys/>
             <PopularMenu/>
