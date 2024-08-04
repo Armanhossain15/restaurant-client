@@ -6,6 +6,13 @@ import Order from "../Pages/Order/Order";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PriveatRoute from "./PriveatRoute";
+import Dashboard from "../Layout/Dashboard";
+import Cart from "../Pages/Dashboard/Cart/Cart";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import AddItems from "../Pages/Dashboard/AddItems/AddItems";
+import AdminRoute from "./AdminRoute";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 const Routes = createBrowserRouter([
@@ -16,7 +23,6 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                // loader: ()=> fetch('./menu.json')
             },
             {
                 path: '/menu',
@@ -35,6 +41,36 @@ const Routes = createBrowserRouter([
                 element: <SignUp/>
             },
 
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <PriveatRoute><Dashboard/></PriveatRoute>,
+        children: [
+            //normal user routes
+            {
+                path: 'cart',
+                element: <Cart/>
+
+            },
+            {
+                path: 'payment',
+                element: <Payment/>
+
+            },
+            //admin routes
+            {
+                path: 'allusers',
+                element: <AdminRoute><AllUsers/></AdminRoute>
+            },
+            {
+                path: 'adminhome',
+                element: <AdminRoute><AdminHome/></AdminRoute>
+            },
+            {
+                path: 'additem',
+                element: <AdminRoute><AddItems/></AdminRoute>
+            }
         ]
     }
 ]);

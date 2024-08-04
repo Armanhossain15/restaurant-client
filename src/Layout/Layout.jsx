@@ -9,7 +9,8 @@ const Layout = () => {
     const isLogin = location.pathname.includes('login') || location.pathname.includes('signup')
     // console.log(isLogin);
     return (
-        <div >
+        <div className='max-w-6xl mx-auto'>
+            
             { isLogin || <Navbar/>}
             <Outlet ></Outlet>
            { isLogin || <Footer/>}

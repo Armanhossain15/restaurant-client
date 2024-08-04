@@ -18,10 +18,13 @@ const Navbar = () => {
         <li><Link to={'/menu'}>Our Menu</Link></li>
         <li><Link to={'/order/dessert'}>Order Food</Link></li>
         <li className="mr-3">
-            <button className="btn">
+            <Link to='/dashboard/cart'>
+            <span>{user?.displayName}</span>
+            <button className="btn">          
             <FaCartPlus className="text-2xl"/>
                 <div className="badge badge-secondary">+{cart.length}</div>
             </button>
+            </Link>
         </li>
         {
             user ? <>
